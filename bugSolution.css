@@ -1,0 +1,14 @@
+The `calc()` function within a `linear-gradient()` function when using percentage values, does not correctly calculate relative to the element's size. Instead of using `calc()` directly, we can either work with pixels or solve this with a different approach. 
+
+Here's a workaround to achieve the desired effect using a background size hack and positioning the gradient:
+
+```css
+.element {
+  background-image: linear-gradient(to right, red, blue);
+  background-size: calc(100% - 50px) 100%;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+```
+
+This solution uses `background-size` to control the size of the gradient, effectively creating the illusion of a start position 50 pixels from the right edge.   `background-position` ensures the gradient starts at the left edge.
