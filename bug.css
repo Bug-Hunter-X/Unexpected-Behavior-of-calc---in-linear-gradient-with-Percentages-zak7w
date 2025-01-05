@@ -1,0 +1,9 @@
+The CSS property `calc()` is not working as expected when used with percentages inside a `linear-gradient()` function.  For example, the following code does not produce the gradient I expect:
+
+```css
+.element {
+  background-image: linear-gradient(to right, red 0%, blue calc(100% - 50px));
+}
+```
+
+I expect the blue color to start at 50 pixels from the right edge of the element. However, it is not working as intended.
